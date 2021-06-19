@@ -11,9 +11,11 @@ Vagrant.configure("2") do |config|
   
   config.vm.provision "shell", inline: <<-EOF
     apt-get update
-    apt-get install git
-    apt-get install ansible
+    apt-get -y install git
+    apt-get -y install ansible
     ansible-galaxy collection install dellemc.os10
+    ansible-galaxy collection install ansible.windows
+    ansible-galaxy collection install community.vmware
     EOF
   
   config.vm.define "ansible" do |ansible|
