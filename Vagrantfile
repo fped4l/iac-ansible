@@ -27,6 +27,8 @@ Vagrant.configure("2") do |config|
     ansible-galaxy collection install dellemc.openmanage
     ansible-galaxy collection install ansible.windows
     ansible-galaxy collection install community.vmware
+    cd /home/vagrant
+    git clone https://github.com/fped4l/iac-ansible.git
     EOF
   end
 
