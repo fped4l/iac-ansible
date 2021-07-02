@@ -45,5 +45,8 @@ Vagrant.configure("2") do |config|
     windows.vm.hostname = "windows"
     #windows.vm.box_url = "StefanScherer/windows_10"
     windows.vm.network "private_network", ip: "192.168.22.12"
+    windows.vm.provision "shell", inline: <<-EOF
+    Set-NetFirewallProfile -Profile * -Enabled False
+    EOF
   end
 end
