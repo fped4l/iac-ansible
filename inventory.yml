@@ -1,3 +1,6 @@
 all:
   hosts:
+    ubuntu:
     192.168.22.11:
+    windows:
+    192.168.22.12:

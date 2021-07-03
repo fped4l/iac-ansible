@@ -1,9 +1,0 @@
----
-- hosts: all
-  become: yes
-  tasks:
-    - name: This is a test of the first play.
-      apt: 
-        name: git
-        state: present
-    - name: This is a test of the second play.
