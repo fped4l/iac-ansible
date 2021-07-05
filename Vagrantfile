@@ -10,14 +10,15 @@ Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
   config.ssh.private_key_path = ["keys/vagrant_rsa", "~/.vagrant.d/insecure_private_key"]
   config.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "~/.ssh/authorized_keys"
-  config.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "home/vagrant/.ssh/authorized_keys"
-
+  
 
   config.vm.define "ansible" do |ansible|
     ansible.vm.box = "ubuntu/groovy64"
     ansible.vm.hostname = "ansible"
     #ansible.vm.box_url = "ubuntu/groovy64"
     ansible.vm.network "private_network", ip: "192.168.22.10"
+    ansible.vm.provision "file", source: "keys/vagrant_rsa", destination: "home/vagrant/.ssh"
+    ansible.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "home/vagrant/.ssh/authorized_keys"
     ansible.vm.provision "shell", inline: <<-EOF
     apt-get update
     apt-get -y install git
@@ -31,6 +32,8 @@ Vagrant.configure("2") do |config|
     cd /home/vagrant
     git clone https://github.com/fped4l/iac-ansible.git
     EOF
+    
+
   end
 
   config.vm.define "ubuntu" do |ubuntu|
@@ -41,6 +44,7 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provision "shell", inline: <<-EOF
     apt-get update
     EOF
+    ubuntu.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "home/vagrant/.ssh/authorized_keys"
   end
 
   config.vm.define "windows" do |windows|
@@ -51,5 +55,6 @@ Vagrant.configure("2") do |config|
     windows.vm.provision "shell", inline: <<-EOF
     Set-NetFirewallProfile -Profile * -Enabled False
     EOF
+    windows.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/authorized_keys"
   end
 end
