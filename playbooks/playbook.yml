@@ -28,7 +28,13 @@
         state: present        
 
 # INSTALL NOTEPAD++  
-    - name: Install Nnotepad++
+    - name: Install notepad++
       apt: 
         name: notepadplusplus=7.9 
-        state: present  
+        state: present
+
+# INSTALL SnagIt  
+    - name: Install snagIt 2018
+      apt: 
+        name: snagit=18.2.2.2240 
+        state: present
