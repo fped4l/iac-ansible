@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   
   config.ssh.insert_key = false
   config.ssh.private_key_path = ["keys/vagrant_rsa", "~/.vagrant.d/insecure_private_key"]
-  config.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "~/.ssh/authorized_keys"
+  #config.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "~/.ssh/vagrant_rsa.pub"
   
 
   config.vm.define "ansible" do |ansible|
@@ -17,8 +17,8 @@ Vagrant.configure("2") do |config|
     ansible.vm.hostname = "ansible"
     #ansible.vm.box_url = "ubuntu/groovy64"
     ansible.vm.network "private_network", ip: "192.168.22.10"
-    #ansible.vm.provision "file", source: "keys/vagrant_rsa", destination: "home/vagrant/.ssh"
-    #ansible.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "home/vagrant/.ssh/authorized_keys"
+    ansible.vm.provision "file", source: "keys/vagrant_rsa", destination: "~/.ssh/vagrant_rsa"
+    ansible.vm.provision "file", source: "keys/vagrant_rsa", destination: "home/vagrant/.ssh/vagrant_rsa"
     ansible.vm.provision "shell", inline: <<-EOF
     apt-get update
     apt-get -y install git
@@ -39,10 +39,14 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.hostname = "ubuntu"
     #ubuntu.vm.box_url = "ubuntu/groovy64"
     ubuntu.vm.network "private_network", ip: "192.168.22.11"
+    ubuntu.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "~/.ssh/vagrant_rsa.pub"
+    ubuntu.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "home/vagrant/.ssh/vagrant_rsa.pub"
     ubuntu.vm.provision "shell", inline: <<-EOF
     apt-get update
+    cat ~/.ssh/vagrant_rsa.pub >> ~/.ssh/authorized_keys
+    cat ~/.ssh/vagrant_rsa.pub >> /home/vagrant/.ssh/authorized_keys
     EOF
-    ubuntu.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "home/vagrant/.ssh/authorized_keys"
+    
   end
 
   config.vm.define "windows" do |windows|
@@ -50,9 +54,9 @@ Vagrant.configure("2") do |config|
     windows.vm.hostname = "windows"
     #windows.vm.box_url = "StefanScherer/windows_10"
     windows.vm.network "private_network", ip: "192.168.22.12"
+    windows.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/vagrant_rsa.pub"
     windows.vm.provision "shell", inline: <<-EOF
     Set-NetFirewallProfile -Profile * -Enabled False
     EOF
-    windows.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/authorized_keys"
   end
 end
