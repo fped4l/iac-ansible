@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
     ansible.vm.box = "ubuntu/groovy64"
     ansible.vm.hostname = "ansible"
     #ansible.vm.box_url = "ubuntu/groovy64"
-    ansible.vm.network "private_network", ip: "192.168.22.10"
+    ansible.vm.network "private_network", ip: "192.168.33.10"
     ansible.vm.provision "file", source: "keys/vagrant_rsa", destination: "~/.ssh/vagrant_rsa"
     ansible.vm.provision "file", source: "keys/vagrant_rsa", destination: "home/vagrant/.ssh/vagrant_rsa"
     ansible.vm.provision "shell", inline: <<-EOF
@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.box = "ubuntu/groovy64"
     ubuntu.vm.hostname = "ubuntu"
     #ubuntu.vm.box_url = "ubuntu/groovy64"
-    ubuntu.vm.network "private_network", ip: "192.168.22.11"
+    ubuntu.vm.network "private_network", ip: "192.168.33.11"
     ubuntu.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "~/.ssh/vagrant_rsa.pub"
     ubuntu.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "home/vagrant/.ssh/vagrant_rsa.pub"
     ubuntu.vm.provision "shell", inline: <<-EOF
@@ -53,7 +53,7 @@ Vagrant.configure("2") do |config|
     windows.vm.box = "StefanScherer/windows_10"
     windows.vm.hostname = "windows"
     #windows.vm.box_url = "StefanScherer/windows_10"
-    windows.vm.network "private_network", ip: "192.168.22.12"
+    windows.vm.network "private_network", ip: "192.168.33.12"
     windows.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/vagrant_rsa.pub"
     windows.vm.provision "shell", inline: <<-EOF
     Set-NetFirewallProfile -Profile * -Enabled False
