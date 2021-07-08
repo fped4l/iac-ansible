@@ -1,5 +1,5 @@
 ---
-- hosts: ubuntu
+- hosts: all
   become: yes
   tasks:
 #ENTER NAME=VERSION FOR SPECIFIC VERSION
