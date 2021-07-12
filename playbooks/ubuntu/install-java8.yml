@@ -1,0 +1,10 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+  
+# INSTALL WINRAR
+    - name: Install winrar
+      apt: 
+        name: openjdk8=8.0.26.10.12
+        state: present
