@@ -1,0 +1,10 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+  
+ # INSTALL MIRC  
+    - name: Install mirc
+      apt: 
+        name: mirc=7.52 
+        state: present        

@@ -1,0 +1,12 @@
+---
+- hosts: windows
+  become: yes
+  tasks:
+
+  #Installation of WinRar
+    - name: Installing WinRar
+      win_chocolatey:
+       name: winrar
+       state: present
+       version: '5.71'
+       source: http://internal/odata/repo

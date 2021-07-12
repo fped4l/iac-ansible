@@ -1,0 +1,12 @@
+---
+- hosts: windows
+  become: yes
+  tasks:
+
+#Installation of Java 8 update
+    - name: Installing Java 8 update 241
+      win_chocolatey:
+       name: openjdk8
+       state: present
+       version: '8.0.26.10.12' 
+       source: http://internal/odata/repo 

@@ -1,0 +1,10 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+  
+ # INSTALL NOTEPAD++  
+    - name: Install notepad++
+      apt: 
+        name: notepadplusplus=7.9 
+        state: present

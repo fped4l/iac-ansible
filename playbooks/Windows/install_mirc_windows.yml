@@ -1,0 +1,12 @@
+---
+- hosts: windows
+  become: yes
+  tasks:
+
+ #Installation of mIRC
+    - name: Installing mIRC
+      win_chocolatey:
+       name: mirc
+       state: present
+       version: '7.52'
+       source: http://internal/odata/repo
