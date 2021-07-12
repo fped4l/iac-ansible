@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.hostname = "ubuntu"
     #ubuntu.vm.box_url = "ubuntu/groovy64"
     ubuntu.vm.network "private_network", ip: "192.168.22.11"
-    ubuntu.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "~/.ssh/vagrant_rsa.pub"
+    ubuntu.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "~/root/.ssh/vagrant_rsa.pub"
     ubuntu.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "home/vagrant/.ssh/vagrant_rsa.pub"
     ubuntu.vm.provision "shell", inline: <<-EOF
     apt-get update
