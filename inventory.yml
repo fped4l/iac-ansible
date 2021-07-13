@@ -1,6 +1,7 @@
 all:
-  hosts:
-    ubuntu:
-    192.168.22.11:
-    windows:
-    192.168.22.12:
+  linux:
+    hosts:
+      192.168.22.11:
+  windows:
+    hosts:
+      192.168.22.12:
