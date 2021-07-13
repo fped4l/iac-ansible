@@ -43,8 +43,6 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "/home/vagrant/.ssh/vagrant_rsa.pub"
     ubuntu.vm.provision "shell", inline: <<-EOF
     apt-get update
-    cat ~/.ssh/vagrant_rsa.pub >> ~/.ssh/authorized_keys
-    cat ~/.ssh/vagrant_rsa.pub >> /home/vagrant/.ssh/authorized_keys
     EOF
     
   end
