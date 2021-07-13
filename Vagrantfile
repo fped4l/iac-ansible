@@ -29,8 +29,7 @@ Vagrant.configure("2") do |config|
     ansible-galaxy collection install dellemc.openmanage
     ansible-galaxy collection install ansible.windows
     ansible-galaxy collection install community.vmware
-    cd /home/vagrant
-    git clone https://github.com/fped4l/iac-ansible.git
+    cp /vagrant/keys/vagrant_rsa /home/vagrant/.ssh/
     EOF
   end
 
@@ -43,6 +42,7 @@ Vagrant.configure("2") do |config|
     #ubuntu.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "home/vagrant/.ssh/vagrant_rsa.pub"
     ubuntu.vm.provision "shell", inline: <<-EOF
     apt-get update
+    cat /vagrant/keys/vagrant_rsa.pub >> /home/vagrant/.ssh/authorized_keys
     EOF
     
   end
@@ -52,7 +52,7 @@ Vagrant.configure("2") do |config|
     windows.vm.hostname = "windows"
     #windows.vm.box_url = "StefanScherer/windows_10"
     windows.vm.network "private_network", ip: "192.168.22.12"
-    windows.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/vagrant_rsa.pub"
+    #windows.vm.provision "file", source: "keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/vagrant_rsa.pub"
     windows.vm.provision "shell", inline: <<-EOF
     Set-NetFirewallProfile -Profile * -Enabled False
     EOF
