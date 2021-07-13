@@ -30,6 +30,8 @@ Vagrant.configure("2") do |config|
     ansible-galaxy collection install ansible.windows
     ansible-galaxy collection install community.vmware
     cp /vagrant/keys/vagrant_rsa /home/vagrant/.ssh/
+    cd /home/vagrant
+    git clone https://github.com/fped4l/iac-ansible.git
     EOF
   end
 
