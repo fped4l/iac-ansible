@@ -1,6 +1,7 @@
 ---
 - hosts: windows
   become: yes
+  become_user: root
   tasks:
 
   #Installation Notepad++ 
