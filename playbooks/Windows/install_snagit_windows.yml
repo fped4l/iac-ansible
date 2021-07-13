@@ -1,0 +1,13 @@
+---
+- hosts: windows
+  become: yes
+  become_user: root
+  tasks:
+
+  #Installation of SnagIt
+    - name: Installing SnagIt 2018
+      win_chocolatey: 
+        name: snagit
+        state: present
+        version: '18.2.2.2240'
+        source: http://internal/odata/repo

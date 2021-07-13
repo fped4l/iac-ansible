@@ -1,0 +1,40 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+#ENTER NAME=VERSION FOR SPECIFIC VERSION
+  # INSTALL GIT
+    - name: Install git.
+      apt: 
+        name: git 
+        state: present
+
+# INSTALL FILEZILLA
+    - name: Install FileZilla.
+      apt: 
+        name: filezilla=3.51
+        state: present
+
+# INSTALL GOOGLE EARTH
+    - name: Install Google Earth.
+      apt: 
+        name: googleearth=7.3.3.7786 
+        state: present
+
+# INSTALL MIRC  
+    - name: Install mirc
+      apt: 
+        name: mirc=7.52 
+        state: present        
+
+# INSTALL NOTEPAD++  
+    - name: Install notepad++
+      apt: 
+        name: notepadplusplus=7.9 
+        state: present
+
+# INSTALL SnagIt  
+    - name: Install snagIt 2018
+      apt: 
+        name: snagit=18.2.2.2240 
+        state: present

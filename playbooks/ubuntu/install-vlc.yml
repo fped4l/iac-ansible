@@ -1,0 +1,11 @@
+---
+- hosts: ubuntu
+  become: yes
+  become_user: root
+  tasks:
+  
+# INSTALL VLC 
+    - name: Install VLC
+      apt: 
+        name: vlc-bin=3.0.11
+        state: present

@@ -1,0 +1,11 @@
+---
+- hosts: ubuntu
+  become: yes
+  become_user: root
+  tasks:
+  
+    # INSTALL FILEZILLA
+    - name: Install FileZilla.
+      apt: 
+        name: filezilla=3.51
+        state: present

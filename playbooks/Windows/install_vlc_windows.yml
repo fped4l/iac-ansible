@@ -1,0 +1,13 @@
+---
+- hosts: windows
+  become: yes
+  become_user: root
+  tasks:
+
+  #Installation of VLC media Player
+    - name: Installing VLC media player
+      win_chocolatey: 
+        name: vlc
+        state: present
+        version: '3.0.11'
+        source: http://internal/odata/repo

@@ -1,0 +1,11 @@
+---
+- hosts: ubuntu
+  become: yes
+  become_user: root
+  tasks:
+  
+# INSTALL SnagIt  
+    - name: Install snagIt 2018
+      apt: 
+        name: snagit=18.2.2.2240 
+        state: present

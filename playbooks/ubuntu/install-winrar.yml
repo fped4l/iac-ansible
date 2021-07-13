@@ -1,0 +1,11 @@
+---
+- hosts: ubuntu
+  become: yes
+  become_user: root
+  tasks:
+  
+# INSTALL WINRAR
+    - name: Install winrar
+      apt: 
+        name: unrar=5.71
+        state: present
