@@ -1,0 +1,12 @@
+---
+- hosts: windows
+  become: yes
+  become_user: root
+  tasks:
+
+  #Installation Chocolatey
+- name: Ensure Chocolatey installed from internal repo
+  win_chocolatey:
+    name: chocolatey
+    state: present
+    source: http://internal/odata/repo/ChocolateyInstall.ps1
