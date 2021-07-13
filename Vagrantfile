@@ -44,6 +44,7 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "/home/vagrant/.ssh/vagrant_rsa.pub"
     ubuntu.vm.provision "shell", inline: <<-EOF
     apt-get update
+    apt-get -y install python3-pip
     EOF
     
   end
@@ -56,6 +57,9 @@ Vagrant.configure("2") do |config|
     windows.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/vagrant_rsa.pub"
     windows.vm.provision "shell", inline: <<-EOF
     Set-NetFirewallProfile -Profile * -Enabled False
+    Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+    Start-Service sshd
+    Set-Service -Name sshd -StartupType 'Automatic'
     EOF
   end
 end
