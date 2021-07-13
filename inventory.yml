@@ -6,3 +6,4 @@ all:
     windows:
       hosts:
         192.168.22.12:
+
