@@ -1,0 +1,13 @@
+---
+- hosts: windows
+  become: yes
+  become_user: root
+  tasks:
+
+  #Installation of Google Earth 
+    - name: Installing Google Earth EC
+      win_chocolatey: 
+        name: ArcGISEarth
+        state: present
+        version: '1.11.2902'
+        source: http://internal/odata/repo

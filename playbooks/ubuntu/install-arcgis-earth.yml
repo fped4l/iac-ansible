@@ -1,0 +1,11 @@
+---
+- hosts: ubuntu
+  become: yes
+  become_user: root
+  tasks:
+  
+  # INSTALL GOOGLE EARTH
+    - name: Install Google Earth.
+      apt: 
+        name: ArcGISEarth=1.11.2902 
+        state: present
