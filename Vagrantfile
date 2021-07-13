@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
     vb.cpus = 2
   end
   
-  config.ssh.insert_key = false
+  #config.ssh.insert_key = false
   config.ssh.private_key_path = ["./keys/vagrant_rsa", "~/.vagrant.d/insecure_private_key"]
   #config.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "~/.ssh/vagrant_rsa.pub"
   
@@ -17,6 +17,8 @@ Vagrant.configure("2") do |config|
     ansible.vm.hostname = "ansible"
     #ansible.vm.box_url = "ubuntu/groovy64"
     ansible.vm.network "private_network", ip: "192.168.22.10"
+    ansible.vm.provision "file", source: "~/.vagrant.d/insecure_private_key", destination: "~/.ssh/insecure_private_key"
+    ansible.vm.provision "file", source: "~/.vagrant.d/insecure_private_key", destination: "/home/vagrant/.ssh/insecure_private_key"
     ansible.vm.provision "file", source: "./keys/vagrant_rsa", destination: "~/.ssh/vagrant_rsa"
     ansible.vm.provision "file", source: "./keys/vagrant_rsa", destination: "/home/vagrant/.ssh/vagrant_rsa"
     ansible.vm.provision "shell", inline: <<-EOF
