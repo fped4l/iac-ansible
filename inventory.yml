@@ -3,7 +3,13 @@ all:
     linux:
       hosts:
         192.168.22.11:
+      vars:
+        ansible_user: vagrant
+        ansible_pass: vagrant
     windows:
       hosts:
-        192.168.22.12:
-...
+        192.168.22.12
+      vars: 
+        ansible_user: vagrant 
+        ansible_pass: vagrant
+
