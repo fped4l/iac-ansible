@@ -7,5 +7,5 @@
   # INSTALL GOOGLE EARTH
     - name: Install Google Earth.
       apt: 
-        name: googleearth=7.3.3.7786 
+        name: googleearth
         state: present
