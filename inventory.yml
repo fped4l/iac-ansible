@@ -9,7 +9,9 @@ all:
     windows:
       hosts:
         192.168.22.12
-      vars: 
+      vars:
+        ansible_connection: winrm
+        ansible_shell_type: powershell 
         ansible_user: vagrant 
         ansible_pass: vagrant
 
