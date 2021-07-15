@@ -39,7 +39,6 @@ Vagrant.configure("2") do |config|
   config.vm.define "ubuntu" do |ubuntu|
     ubuntu.vm.box = "ubuntu/groovy64"
     ubuntu.vm.hostname = "ubuntu"
-    #ubuntu.vm.box_url = "ubuntu/groovy64"
     ubuntu.vm.network "private_network", ip: "192.168.22.11"
     ubuntu.vm.provision "shell", inline: <<-EOF
     apt-get update
@@ -51,7 +50,6 @@ Vagrant.configure("2") do |config|
   config.vm.define "windows" do |windows|
     windows.vm.box = "StefanScherer/windows_10"
     windows.vm.hostname = "windows"
-    #windows.vm.box_url = "StefanScherer/windows_10"
     windows.vm.network "private_network", ip: "192.168.22.12"
     windows.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/vagrant_rsa.pub"
     windows.vm.provision "shell", inline: <<-EOF
