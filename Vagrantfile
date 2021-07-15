@@ -19,19 +19,18 @@ Vagrant.configure("2") do |config|
     ansible.vm.network "private_network", ip: "192.168.22.10"
     ansible.vm.provision "file", source: "~/.vagrant.d/insecure_private_key", destination: "~/.ssh/insecure_private_key"
     ansible.vm.provision "file", source: "~/.vagrant.d/insecure_private_key", destination: "/home/vagrant/.ssh/insecure_private_key"
-    ansible.vm.provision "file", source: "./keys/vagrant_rsa", destination: "~/.ssh/vagrant_rsa"
-    ansible.vm.provision "file", source: "./keys/vagrant_rsa", destination: "/home/vagrant/.ssh/vagrant_rsa"
     ansible.vm.provision "shell", inline: <<-EOF
     apt-get update
     apt-get -y install git
     apt-get -y install python3-pip
     apt-get -y install ansible
+    chmod 0600 /home/vagrant/.ssh/insecure_private_key
+    ssh-keygen -p -N "" -f /home/vagrant/.ssh/insecure_private_key
     pip install omsdk --upgrade
     ansible-galaxy collection install dellemc.os10
     ansible-galaxy collection install dellemc.openmanage
     ansible-galaxy collection install ansible.windows
     ansible-galaxy collection install community.vmware
-    cp /vagrant/keys/vagrant_rsa /home/vagrant/.ssh/
     cd /home/vagrant
     git clone https://github.com/fped4l/iac-ansible.git
     EOF
@@ -42,8 +41,6 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.hostname = "ubuntu"
     #ubuntu.vm.box_url = "ubuntu/groovy64"
     ubuntu.vm.network "private_network", ip: "192.168.22.11"
-    ubuntu.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "~/.ssh/vagrant_rsa.pub"
-    ubuntu.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "/home/vagrant/.ssh/vagrant_rsa.pub"
     ubuntu.vm.provision "shell", inline: <<-EOF
     apt-get update
     apt-get -y install python3-pip
