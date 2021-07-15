@@ -7,5 +7,5 @@
 # INSTALL SnagIt  
     - name: Install snagIt 2018
       apt: 
-        name: snagit=18.2.2.2240 
+        name: snagit
         state: present

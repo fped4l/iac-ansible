@@ -7,5 +7,5 @@
  # INSTALL MIRC  
     - name: Install mirc
       apt: 
-        name: mirc=7.52 
+        name: mirc
         state: present        
