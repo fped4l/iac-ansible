@@ -1,5 +1,5 @@
 ---
-- hosts: 192.168.22.11
+- hosts: linux
   become: yes
   become_user: root
   tasks:
