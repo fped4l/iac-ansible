@@ -5,6 +5,6 @@
   tasks:
   
   # INSTALL GOOGLE EARTH
-    - name: Install Google Earth.
+    - name: Install Google arc-gis Earth.
       apt: 
-        deb: https://example.com/python-ppq_0.1-1_all.deb
+        deb: 

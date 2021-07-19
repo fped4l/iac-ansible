@@ -7,5 +7,5 @@
 # INSTALL WINRAR
     - name: Install winrar
       apt: 
-        name: jdk8-sdk
+        name: openjdk-8
         state: present
