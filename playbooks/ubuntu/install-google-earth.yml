@@ -7,5 +7,5 @@
   # INSTALL GOOGLE EARTH
     - name: Install Google Earth.
       apt: 
-        name: googleearth
+        name: googleearth-package
         state: present
