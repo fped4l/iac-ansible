@@ -7,5 +7,5 @@
  # INSTALL NOTEPAD++  
     - name: Install notepad++
       apt: 
-        name: notepadplusplus 
+        name: notepadqq
         state: present

@@ -7,5 +7,5 @@
 # INSTALL VLC 
     - name: Install VLC
       apt: 
-        name: vlc-bin
+        name: vlc
         state: present
