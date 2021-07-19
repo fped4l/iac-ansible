@@ -13,5 +13,5 @@ all:
         ansible_connection: winrm
         ansible_shell_type: powershell 
         ansible_user: vagrant 
-        ansible_pass: vagrant
+        ansible_password: vagrant
 
