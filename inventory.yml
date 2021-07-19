@@ -14,5 +14,4 @@ all:
         ansible_shell_type: powershell 
         ansible_user: vagrant 
         ansible_pass: vagrant
-        ansible_winrm_server_cert_validation: ignore
 
