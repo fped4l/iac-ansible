@@ -11,8 +11,9 @@ all:
         192.168.22.12:
       vars:
         ansible_connection: winrm
-        ansible_shell_type: powershell 
+        ansible_winrm_server_cert_validation: ignore 
+        ansible_shell_type: powershell     
         ansible_user: vagrant 
         ansible_password: vagrant
-        ansible_winrm_server_cert_validation: ignore
+   
 
