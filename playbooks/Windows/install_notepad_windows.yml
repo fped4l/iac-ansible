@@ -5,9 +5,9 @@
   tasks:
 
   #Installation Notepad++ 
-    - name: Installing notepad++
-      win_chocolatey: 
-        name: notepadplusplus.install
-        state: present
-        version: '7.9'
-        source: http://internal/odata/repo
+- name: Ensure notepadplusplus 7.9 installed
+  win_chocolatey:
+    name: notepadplusplus
+    state: present
+    version: 7.9
+    source: http://internal/odata/repo

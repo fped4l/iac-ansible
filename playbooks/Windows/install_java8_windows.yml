@@ -5,9 +5,10 @@
   tasks:
 
 #Installation of Java 8 update
-    - name: Installing Java 8 update 241
-      win_chocolatey:
-       name: openjdk8
-       state: present
-       version: '8.0.26.10.12' 
-       source: http://internal/odata/repo 
+#version: 8.262.10 was the only version they have
+- name: Ensure openjdk8jre x64 installed
+  win_chocolatey:
+    name: openjdk8jre
+    state: present
+    version: 8.262.10
+    source: http://internal/odata/repo
