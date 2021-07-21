@@ -5,9 +5,7 @@
   tasks:
 
   #Installation of Google Earth 
-    - name: Installing Google Earth EC
-      win_chocolatey: 
-        name: ArcGISEarth
-        state: present
-        version: '1.11.2902'
-        source: http://internal/odata/repo
+    - name: Installing ArcGis Earth 
+      get_url:
+          url: https://links.esri.com/arcgisearth/en
+          dest:  C:\Users\vagrant\Downloads
