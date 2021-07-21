@@ -4,7 +4,8 @@
   become_user: root
   tasks:
 
-  #Installation of Google Earth 
+  #Installation of ArcGis Earth
+  #Installed the most recent version of ArcGis Earth
     - name: Installing ArcGis Earth 
       get_url:
           url: https://links.esri.com/arcgisearth/en
