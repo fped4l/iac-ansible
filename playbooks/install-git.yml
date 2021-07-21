@@ -1,9 +1,0 @@
----
-- hosts: linux
-  become: yes
-  tasks:
-    - name: Installing Git...
-      apt: 
-        name: git
-        state: present
-    #- name: This is a test of the second play.
