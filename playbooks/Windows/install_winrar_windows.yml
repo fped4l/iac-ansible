@@ -5,9 +5,9 @@
   tasks:
 
   #Installation of WinRar
-- name: Ensure winrar 5.71 installed
-  win_chocolatey:
-    name: winrar
-    state: present
-    version: 5.71
-    source: http://internal/odata/repo
+    - name: Ensure winrar 5.71 installed
+      win_chocolatey:
+        name: winrar
+        state: present
+        version: 5.71
+        source: http://internal/odata/repo

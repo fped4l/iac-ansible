@@ -6,9 +6,9 @@
 
   #Installation of SnagIt
   #version 18.2.2.2240 was not avalible so the next version 2019.1.0 was downloaded
-- name: Ensure snagit installed
-  win_chocolatey:
-    name: snagit
-    state: present
-    version: 2019.1.0
-    source: http://internal/odata/repo
+    - name: Ensure snagit installed
+      win_chocolatey:
+        name: snagit
+        state: present
+        version: 2019.1.0
+        source: http://internal/odata/repo

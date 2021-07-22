@@ -5,9 +5,9 @@
   tasks:
 
  #Installation of mIRC
-- name: Ensure mirc  7.52 installed
-  win_chocolatey:
-    name: mirc
-    state: present
-    version: 7.52
-    source: http://internal/odata/repo
+    - name: Ensure mirc  7.52 installed
+      win_chocolatey:
+        name: mirc
+        state: present
+        version: 7.52
+        source: http://internal/odata/repo
