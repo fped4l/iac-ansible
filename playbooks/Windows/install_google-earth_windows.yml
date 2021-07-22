@@ -1,6 +1,5 @@
 ---
 - hosts: windows
-  ansible_become_method: runas
   become: yes
   become_user: root
   
