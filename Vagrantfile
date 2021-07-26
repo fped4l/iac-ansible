@@ -55,7 +55,7 @@ Vagrant.configure("2") do |config|
     windows.vm.network "private_network", ip: "192.168.22.12"
     windows.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/vagrant_rsa.pub"
     windows.vm.provision "shell", inline: <<-EOF
-    Set-NetFirewallProfile -All -Enabled False
+    Set-NetFirewallProfile -Profile * -Enabled False
     Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
     Start-Service sshd
     Set-Service -Name sshd -StartupType 'Automatic'
