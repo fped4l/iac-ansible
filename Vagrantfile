@@ -63,7 +63,7 @@ Vagrant.configure("2") do |config|
     EOF
   end
 
-  config.vm.define "windows" do |windows|
+  config.vm.define "caws" do |caws|
     windows.vm.box = "StefanScherer/windows_10"
     windows.vm.hostname = "windows"
     windows.vm.network "private_network", ip: "192.168.0.215"
