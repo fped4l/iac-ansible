@@ -62,4 +62,18 @@ Vagrant.configure("2") do |config|
     Set-Service -Name sshd -StartupType 'Automatic'
     EOF
   end
+
+  config.vm.define "windows" do |windows|
+    windows.vm.box = "StefanScherer/windows_10"
+    windows.vm.hostname = "windows"
+    windows.vm.network "private_network", ip: "192.168.0.215"
+    #config.vm.network "forwarded_port", guest: 5985, host: 8080
+    windows.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/vagrant_rsa.pub"
+    windows.vm.provision "shell", inline: <<-EOF
+    Set-NetFirewallProfile -Profile * -Enabled False
+    Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+    Start-Service sshd
+    Set-Service -Name sshd -StartupType 'Automatic'
+    EOF
+  end
 end
