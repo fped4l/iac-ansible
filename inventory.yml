@@ -23,7 +23,7 @@ all:
         ansible_become_method: runas
         ansible_shell_type: powershell     
         ansible_user: usaf_admin
-        ansible_password:
+        ansible_password: password
 
 
    
