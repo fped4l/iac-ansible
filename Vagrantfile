@@ -53,7 +53,7 @@ Vagrant.configure("2") do |config|
     windows.vm.box = "StefanScherer/windows_10"
     windows.vm.hostname = "windows"
     windows.vm.network "private_network", ip: "192.168.22.12"
-    config.vm.network "forwarded_port", guest: 5985, host: 8080
+    #config.vm.network "forwarded_port", guest: 5985, host: 8080
     windows.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/vagrant_rsa.pub"
     windows.vm.provision "shell", inline: <<-EOF
     Set-NetFirewallProfile -Profile * -Enabled False
