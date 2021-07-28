@@ -15,6 +15,7 @@ all:
             ansible_connection: winrm
             ansible_become_method: runas
             ansible_shell_type: powershell
+            ansible_winrm_transport: negotiate
             ansible_winrm_server_cert_validation: ignore
         servers:
           hosts:
@@ -23,4 +24,5 @@ all:
             ansible_connection: winrm
             ansible_become_method: runas
             ansible_shell_type: powershell
+            ansible_winrm_transport: negotiate
             ansible_winrm_server_cert_validation: ignore
