@@ -13,8 +13,8 @@
       confirm: yes
       salt_size: 7
 
-  become: yes
-  become_user: vagrant
+  ansible_user: {{ username }}
+  ansible_pass: {{ password }}
 
   tasks:
 
