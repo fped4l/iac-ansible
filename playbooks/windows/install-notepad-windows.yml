@@ -10,4 +10,4 @@
         name: notepadplusplus
         state: present
         version: 7.9
-        source: http://internal/odata/repo
+        #source: http://internal/odata/repo

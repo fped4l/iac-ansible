@@ -11,4 +11,4 @@
         name: openjdk8jre
         state: present
         version: 8.262.10
-        source: http://internal/odata/repo
+        #source: http://internal/odata/repo

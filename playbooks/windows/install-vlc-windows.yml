@@ -10,4 +10,4 @@
         name: vlc
         state: present
         version: 3.0.11
-        source: http://internal/odata/repo
+        #source: http://internal/odata/repo

@@ -23,6 +23,7 @@ Vagrant.configure("2") do |config|
     apt-get -y install git
     apt-get -y install python3-pip
     apt-get -y install ansible
+    apt-get install sshpass
     chmod 0600 /home/vagrant/.ssh/insecure_private_key
     ssh-keygen -p -N "" -f /home/vagrant/.ssh/insecure_private_key
     pip install pywinrm

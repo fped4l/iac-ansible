@@ -12,4 +12,4 @@
         name: googleearthpro
         state: present
         version: 7.3.3.7786
-        source: http://internal/odata/repo
+        #source: http://internal/odata/repo
