@@ -33,8 +33,8 @@ Vagrant.configure("2") do |config|
     ansible-galaxy collection install ansible.windows
     ansible-galaxy collection install chocolatey.chocolatey
     ansible-galaxy collection install community.vmware
-    echo "192.168.22.11  linux.local linux" >> /etc/hosts
-    echo "192.168.22.12  windows.local windows" >> /etc/hosts
+    echo "192.168.22.11  ubuntu-01.local ubuntu-01" >> /etc/hosts
+    echo "192.168.22.12  win10-01.local win10-01" >> /etc/hosts
     cd /home/vagrant
     git clone https://github.com/fped4l/iac-ansible.git
     EOF
@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "ubuntu" do |ubuntu|
     ubuntu.vm.box = "ubuntu/groovy64"
-    ubuntu.vm.hostname = "ubuntu"
+    ubuntu.vm.hostname = "ubuntu-01"
     ubuntu.vm.network "private_network", ip: "192.168.22.11"
     ubuntu.vm.provision "shell", inline: <<-EOF
     apt-get update
@@ -51,14 +51,12 @@ Vagrant.configure("2") do |config|
     
   end
 
-  config.vm.define "windows" do |windows|
-    windows.vm.box = "StefanScherer/windows_10"
-    windows.vm.hostname = "windows"
-    windows.vm.network "private_network", ip: "192.168.22.12"
-    #config.vm.network "forwarded_port", guest: 5985, host: 8080
-    #windows.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/vagrant_rsa.pub"
-    windows.vm.provision "file", source: "./shared/config-winrm.ps1", destination: "C:/Users/vagrant/config-winrm.ps1"
-    windows.vm.provision "shell", inline: <<-EOF
+  config.vm.define "win10" do |win10|
+    win10.vm.box = "StefanScherer/windows_10"
+    win10.vm.hostname = "win10-01"
+    win10.vm.network "private_network", ip: "192.168.22.12"
+    win10.vm.provision "file", source: "./shared/config-winrm.ps1", destination: "C:/Users/vagrant/config-winrm.ps1"
+    win10.vm.provision "shell", inline: <<-EOF
     Set-NetFirewallProfile -Profile * -Enabled False
     Set-ExecutionPolicy -ExecutionPolicy Bypass -Confirm:$false
     & "C:/Users/vagrant/config-winrm.ps1" 
