@@ -12,11 +12,11 @@ all:
           hosts:
             win10-01:
         domaincontrollers:
+          hosts:
+            wk2k19-01:
           vars:
             ansible_connection: winrm
             ansible_become_method: runas
             ansible_shell_type: powershell
             ansible_winrm_transport: credssp
             ansible_winrm_server_cert_validation: ignore
-          hosts:
-            wk2k19-01:
