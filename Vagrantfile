@@ -59,7 +59,7 @@ Vagrant.configure("2") do |config|
     win10.vm.provision "shell", inline: <<-EOF
     Set-NetFirewallProfile -Profile * -Enabled False
     Set-ExecutionPolicy -ExecutionPolicy Bypass -Confirm:$false
-    & "C:/Users/vagrant/config-winrm.ps1" 
+    & "C:/Users/vagrant/config-winrm.ps1" -verbose
     EOF
   end
 end

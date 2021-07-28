@@ -63,7 +63,7 @@ Param (
     [switch]$ForceNewSSLCert,
     [switch]$GlobalHttpFirewallAccess,
     [switch]$DisableBasicAuth = $true,
-    [switch]$EnableCredSSP
+    [switch]$EnableCredSSP = $true
 )
 
 Function Write-Log
@@ -391,7 +391,7 @@ Else
 }
 
 # If EnableCredSSP if set to true
-If ($EnableCredSSP)
+If ($EnableCredSSP -eq $true)
 {
     # Check for CredSSP authentication
     $credsspAuthSetting = Get-ChildItem WSMan:\localhost\Service\Auth | Where-Object {$_.Name -eq "CredSSP"}
