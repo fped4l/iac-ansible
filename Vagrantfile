@@ -36,6 +36,7 @@ Vagrant.configure("2") do |config|
     ansible-galaxy collection install community.vmware
     echo "192.168.22.11  ubuntu-01.local ubuntu-01" >> /etc/hosts
     echo "192.168.22.12  win10-01.local win10-01" >> /etc/hosts
+    echo "192.168.22.13  win2k19-01.local win2k19-01" >> /etc/hosts
     cd /home/vagrant
     git clone https://github.com/fped4l/iac-ansible.git
     EOF
@@ -58,6 +59,18 @@ Vagrant.configure("2") do |config|
     win10.vm.network "private_network", ip: "192.168.22.12"
     win10.vm.provision "file", source: "./shared/config-winrm.ps1", destination: "C:/Users/vagrant/config-winrm.ps1"
     win10.vm.provision "shell", inline: <<-EOF
+    Set-NetFirewallProfile -Profile * -Enabled False
+    Set-ExecutionPolicy -ExecutionPolicy Bypass -Confirm:$false
+    & "C:/Users/vagrant/config-winrm.ps1" -verbose
+    EOF
+  end
+
+  config.vm.define "win2k19" do |win2k19|
+    win2k19.vm.box = "StefanScherer/windows_2019"
+    win2k19.vm.hostname = "win2k19-01"
+    win2k19.vm.network "private_network", ip: "192.168.22.13"
+    win2k19.vm.provision "file", source: "./shared/config-winrm.ps1", destination: "C:/Users/vagrant/config-winrm.ps1"
+    win2k19.vm.provision "shell", inline: <<-EOF
     Set-NetFirewallProfile -Profile * -Enabled False
     Set-ExecutionPolicy -ExecutionPolicy Bypass -Confirm:$false
     & "C:/Users/vagrant/config-winrm.ps1" -verbose

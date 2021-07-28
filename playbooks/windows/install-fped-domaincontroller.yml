@@ -1,0 +1,32 @@
+---
+- hosts: domaincontrollers
+  vars_prompt:
+    - name: domainname
+      prompt: Enter fqdn of domain (ex. siteid.mil)
+      private: no
+
+    - name: safemodepassword
+      prompt: Enter ad safemode password
+      private: yes
+      encrypt: sha512_crypt
+      confirm: yes
+      salt_size: 7
+  
+  tasks:
+
+    - name: 'Deploy FPED Domain: "{{ domainname }}"'
+      ansible.windows.win_domain:
+        create_dns_delegation: no
+        #database_path: C:\Windows\NTDS
+        dns_domain_name: "{{ domainname }}"
+        #domain_mode: Win2012R2
+        #domain_netbios_name: ANSIBLE
+        #forest_mode: Win2012R2
+        safe_mode_password: "{{ safemodepassword }}"
+        #sysvol_path: C:\Windows\SYSVOL
+      register: domain_install
+
+    - name: Validate that the netlogon service has started, before running next task
+      ansible.windows.win_reboot:
+        test_command: 'exit (Get-Service -Name Netlogon).Status -ne "Running"'
+    
