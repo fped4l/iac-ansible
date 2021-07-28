@@ -9,5 +9,3 @@
       win_chocolatey:
         name: filezilla
         state: present
-        version: 3.51.0
-        #source: http://internal/odata/repo
