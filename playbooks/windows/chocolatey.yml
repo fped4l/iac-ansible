@@ -1,11 +1,24 @@
 ---
-- hosts: windows
+- name: ensure chocolatey is installed
+  hosts: windows
+  vars_prompt:
+    - name: username
+      prompt: Enter username
+      private: no
+
+    - name: password
+      prompt: Enter password
+      private: yes
+      encrypt: sha512_crypt
+      confirm: yes
+      salt_size: 7
+
   become: yes
-  become_user: root
+  remote_user: vagrant
+
   tasks:
 
       - name: Ensure Chocolatey installed from internal repo
         win_chocolatey:
           name: chocolatey
           state: present
-          source: http://internal/odata/repo/ChocolateyInstall.ps1
