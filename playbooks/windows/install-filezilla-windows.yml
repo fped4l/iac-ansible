@@ -1,11 +1,8 @@
 ---
 - hosts: windows
-  become: yes
-  become_user: root
   tasks:
 
-  #Installation of Filezilla
-    - name: Ensure filezilla 3.51.0 installed
-      win_chocolatey:
-        name: filezilla
-        state: present
+      - name: Ensure filezilla 3.51.0 installed
+        win_chocolatey:
+          name: filezilla
+          state: present
