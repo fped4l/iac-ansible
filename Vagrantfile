@@ -33,6 +33,8 @@ Vagrant.configure("2") do |config|
     ansible-galaxy collection install dellemc.openmanage
     ansible-galaxy collection install ansible.windows
     ansible-galaxy collection install community.vmware
+    echo "192.168.22.11  linux.local linux" >> /etc/hosts
+    echo "192.168.22.12  windows.local windows" >> /etc/hosts
     cd /home/vagrant
     git clone https://github.com/fped4l/iac-ansible.git
     EOF
@@ -55,11 +57,11 @@ Vagrant.configure("2") do |config|
     windows.vm.network "private_network", ip: "192.168.22.12"
     #config.vm.network "forwarded_port", guest: 5985, host: 8080
     windows.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "C:/Users/vagrant/.ssh/vagrant_rsa.pub"
+    windows.vm.provision "file", source: "./shared/config-winrm.ps1", destination: "C:/Users/vagrant/config-winrm.ps1"
     windows.vm.provision "shell", inline: <<-EOF
     Set-NetFirewallProfile -Profile * -Enabled False
-    Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
-    Start-Service sshd
-    Set-Service -Name sshd -StartupType 'Automatic'
+    Set-ExecutionPolicy -ExecutionPolicy Bypass -Confirm:$false
+    & "C:/Users/vagrant/config-winrm.ps1" 
     EOF
   end
 end
