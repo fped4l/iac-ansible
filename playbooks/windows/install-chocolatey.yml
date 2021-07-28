@@ -1,6 +1,5 @@
 ---
-- name: ensure chocolatey is installed
-  hosts: windows
+- hosts: windows
   #vars_prompt:
     #- name: username
       #prompt: Enter username
@@ -18,7 +17,7 @@
 
   tasks:
 
-      - name: Ensure Chocolatey installed from internal repo
+      - name: Ensure Chocolatey installed
         win_chocolatey:
           name: chocolatey
           state: present
