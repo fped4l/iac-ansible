@@ -8,8 +8,7 @@ Vagrant.configure("2") do |config|
   end
   
   config.ssh.insert_key = false
-  config.ssh.private_key_path = ["./keys/vagrant_rsa", "~/.vagrant.d/insecure_private_key"]
-  #config.vm.provision "file", source: "./keys/vagrant_rsa.pub", destination: "~/.ssh/vagrant_rsa.pub"
+  config.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key"]
   
 
   config.vm.define "ansible" do |ansible|
