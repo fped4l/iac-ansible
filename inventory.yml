@@ -2,14 +2,15 @@ all:
   children:
     linux:
       hosts:
-        linux.local:
+        linux:
       vars:
         ansible_user: vagrant
         ansible_pass: vagrant
     windows:
       hosts:
-        windows.local:
+        windows:
       vars:
         ansible_connection: winrm
         ansible_become_method: runas
         ansible_shell_type: powershell
+        ansible_winrm_server_cert_validation: ignore
