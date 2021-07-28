@@ -27,6 +27,8 @@ Vagrant.configure("2") do |config|
     chmod 0600 /home/vagrant/.ssh/insecure_private_key
     ssh-keygen -p -N "" -f /home/vagrant/.ssh/insecure_private_key
     pip install pywinrm
+    pip install requests-credssp
+    pip install requests-kerberos
     pip install omsdk --upgrade
     ansible-galaxy collection install dellemc.os10
     ansible-galaxy collection install dellemc.openmanage
