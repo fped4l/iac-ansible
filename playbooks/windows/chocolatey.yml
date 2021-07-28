@@ -13,8 +13,8 @@
       confirm: yes
       salt_size: 7
 
-  ansible_user: {{ username }}
-  ansible_pass: {{ password }}
+  ansible_user: "{{ username }}"
+  ansible_pass: "{{ password }}"
 
   tasks:
 
