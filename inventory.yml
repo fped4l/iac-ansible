@@ -15,6 +15,16 @@ all:
         ansible_shell_type: powershell     
         ansible_user: vagrant 
         ansible_password: vagrant
+    caws:
+      hosts: 
+        192.168.0.215:
+      vars:
+        ansible_connection: winrm
+        ansible_become_method: runas
+        ansible_shell_type: powershell     
+        ansible_user: usaf_admin
+        ansible_password: password
+
 
    
 
