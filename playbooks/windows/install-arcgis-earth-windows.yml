@@ -1,12 +1,11 @@
 ---
-- hosts: windows
+- hosts: workstations
   become: yes
   become_user: root
   tasks:
 
   #Installation of ArcGis Earth
   #Installed the most recent version of ArcGis Earth
-    - name: Installing ArcGis Earth 
-      get_url:
-          url: https://links.esri.com/arcgisearth/en
-          dest:  C:\Users\vagrant\Downloads
+    - name: Install ArcGis Earth
+      win_package:
+        path: https://links.esri.com/arcgisearth/en
