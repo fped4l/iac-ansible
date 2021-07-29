@@ -68,6 +68,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "win2k19" do |win2k19|
     win2k19.vm.box = "StefanScherer/windows_2019"
+    win2k19.vm.box_version = "v2021.04.14"
     win2k19.vm.hostname = "win2k19-01"
     win2k19.vm.network "private_network", ip: "192.168.22.13"
     win2k19.vm.provision "file", source: "./shared/config-winrm.ps1", destination: "C:/Users/vagrant/config-winrm.ps1"
