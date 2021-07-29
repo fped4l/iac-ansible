@@ -1,0 +1,14 @@
+---
+- hosts: workstations
+  #become: yes
+  #become_user: root
+  
+  tasks:
+  #Installation of Google Earth Pro
+  #Google earth enterprise client v7.3.3.7786 not avaliable but google earth pro is 
+    - name: Ensure google earth pro v7.3.3.7786 installed
+      win_chocolatey:
+        name: googleearthpro
+        state: present
+        version: '7.3.3.7786'
+        #source: http://internal/odata/repo
