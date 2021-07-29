@@ -15,19 +15,25 @@ This is the list of prerequisite software you need to deploy the development ans
 
 # Deployment of Virtual Environment
 
-1. Open Powershell; Clone the repo.
+1. Open Powershell; Change directory to your profile
+   ```sh
+   cd ~/
+   ```
+   ![image](https://user-images.githubusercontent.com/25991921/127533476-cdc0fc8b-bd8a-4b10-9bc7-ef1f309b242d.png)
+
+2. Clone the repository.
    ```sh
    git clone https://github.com/fped4l/iac-ansible.git
    ```
    ![image](https://user-images.githubusercontent.com/25991921/127525947-fa1308e4-6325-46fe-b225-cf34dc05f361.png)
 
-2. Change to repository directory.
+3. Change to repository directory.
    ```sh
    cd .\iac-ansible\
    ```
    ![image](https://user-images.githubusercontent.com/25991921/127526172-76f1b0e0-b8c2-4dcb-a51a-df2cf4ef253f.png)
 
-3. Deploy Ansible Development Environment (Will take some time depending on host machine resources)
+4. Deploy Ansible Development Environment (Will take some time depending on host machine resources)
    ```sh
    vagrant up; vagrant ssh ansible
    ```
