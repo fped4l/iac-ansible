@@ -2,12 +2,12 @@
 - hosts: windows
   become: yes
   become_user: root
+  
   tasks:
-
   #Installation Notepad++ 
     - name: Ensure notepadplusplus 7.9 installed
       win_chocolatey:
         name: notepadplusplus
         state: present
-        version: 7.9
+        version: '7.9'
         #source: http://internal/odata/repo

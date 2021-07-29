@@ -1,0 +1,13 @@
+---
+- hosts: workstations
+  #become: yes
+  #become_user: vagrant
+  
+  tasks:
+  #Installation of Java 8 update 231
+    - name: Ensure Java runtime (jre) v8.0.231 installed
+      win_chocolatey:
+        name: javaruntime
+        state: present
+        version: '8.0.231'
+        #source: http://internal/odata/repo

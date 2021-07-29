@@ -1,13 +1,13 @@
 ---
-- hosts: windows
-  become: yes
-  become_user: root
+- hosts: workstations
+  #become: yes
+  #become_user: root
+  
   tasks:
-
   #Installation of WinRar
     - name: Ensure winrar 5.71 installed
       win_chocolatey:
         name: winrar
         state: present
-        version: 5.71
+        version: '5.71'
         #source: http://internal/odata/repo

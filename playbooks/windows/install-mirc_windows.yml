@@ -1,8 +1,0 @@
----
-- hosts: windows
-  tasks:
-    - name: Ensure mirc  7.52 installed
-      win_chocolatey:
-            name: mirc
-            state: present
-            version: 7.52

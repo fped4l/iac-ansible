@@ -1,14 +1,14 @@
 ---
-- hosts: windows
-  become: yes
-  become_user: root
+- hosts: workstations
+  #become: yes
+  #become_user: root
   tasks:
 
   #Installation of SnagIt
   #version 18.2.2.2240 was not avalible so the next version 2019.1.0 was downloaded
-    - name: Ensure snagit installed
+    - name: Ensure snagit v2021.0.2 installed
       win_chocolatey:
         name: snagit
         state: present
-        version: 2019.1.0
+        version: '2021.0.2' #Need to add quotes around version or playbook will fail
         #source: http://internal/odata/repo

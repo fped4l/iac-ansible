@@ -1,0 +1,11 @@
+---
+- hosts: workstations
+  #become: yes
+  #become_user: vagrant
+  
+  tasks:
+    - name: Ensure mirc v7.52 installed
+      win_chocolatey:
+            name: mirc
+            state: present
+            version: '7.52'
