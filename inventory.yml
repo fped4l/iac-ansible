@@ -18,7 +18,7 @@ all:
                 ansible_winrm_server_cert_validation: ignore
         servers:
           hosts:
-            wk2k19-01:
+            win2k19-01:
                 ansible_connection: winrm
                 ansible_become_method: runas
                 ansible_shell_type: powershell
