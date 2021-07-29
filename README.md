@@ -1,19 +1,35 @@
 ## Getting Started
 
-### Prerequisites
+# Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* Install Vagrant from here: https://www.vagrantup.com/downloads
+This is the list of prerequisite software you need to deploy the sandbox ethical hacking environment.
 
-### Deployment
+**Git**
+* Download and install Git from here: https://github.com/git-for-windows/git/releases/download/v2.32.0.windows.2/Git-2.32.0.2-64-bit.exe
 
-1. Clone the repo
+**Vagrant**
+* Download and install Vagrant from here: https://releases.hashicorp.com/vagrant/2.2.17/vagrant_2.2.17_x86_64.msi
+
+**Oracle VirtualBox**
+* Download and install VirtaulBox from here: https://download.virtualbox.org/virtualbox/6.1.22/VirtualBox-6.1.22-144080-Win.exe
+
+# Deployment of Virtual Environment
+
+1. Open Powershell; Clone the repo.
    ```sh
    git clone https://github.com/fped4l/iac-ansible.git
    ```
-2. Deploy development Ansible Environment
+
+2. Change to repository directory.
+   ```sh
+   cd .\iac-ansible\
+   ```
+
+3. Deploy Ansible Development Environment (Will take some time depending on host machine resources)
    ```sh
    vagrant up; vagrant ssh ansible
+   ```
+
 
 ## Useful commands
 
