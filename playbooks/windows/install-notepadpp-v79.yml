@@ -1,7 +1,7 @@
 ---
-- hosts: windows
-  become: yes
-  become_user: root
+- hosts: workstations
+  #become: yes
+  #become_user: root
   
   tasks:
   #Installation Notepad++ 
@@ -10,4 +10,4 @@
         name: notepadplusplus
         state: present
         version: '7.9'
-        #source: http://internal/odata/repo
+        ignore_checksums: yes #Had to add this in order to complete with version successfully

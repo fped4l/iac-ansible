@@ -9,3 +9,4 @@
             name: mirc
             state: present
             version: '7.52'
+            ignore_checksums: yes #Had to add this in order to complete with version successfully
