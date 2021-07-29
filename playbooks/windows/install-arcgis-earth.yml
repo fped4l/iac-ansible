@@ -1,7 +1,5 @@
 ---
 - hosts: workstations
-  become: yes
-  become_user: root
   tasks:
 
   #Installation of ArcGis Earth
@@ -9,3 +7,4 @@
     - name: Install ArcGis Earth
       win_package:
         path: https://links.esri.com/arcgisearth/en
+        state: present
