@@ -16,7 +16,7 @@ This is the list of prerequisite software you need to deploy the development ans
 # Deployment of Virtual Environment
 
 1. Open Powershell; Change directory to your profile
-   ```sh
+   ```
    cd ~/
    ```
    ![image](https://user-images.githubusercontent.com/25991921/127533476-cdc0fc8b-bd8a-4b10-9bc7-ef1f309b242d.png)
