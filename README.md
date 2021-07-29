@@ -2,7 +2,7 @@
 
 # Prerequisites
 
-This is the list of prerequisite software you need to deploy the sandbox ethical hacking environment.
+This is the list of prerequisite software you need to deploy the development ansible environment.
 
 **Git**
 * Download and install Git from here: https://github.com/git-for-windows/git/releases/download/v2.32.0.windows.2/Git-2.32.0.2-64-bit.exe
