@@ -1,0 +1,75 @@
+---
+- hosts: workstations
+
+  tasks:
+
+      - name: Ensure Chocolatey installed
+        win_chocolatey:
+          name: chocolatey
+          state: present
+
+
+      - name: Ensure filezilla v3.51.0 installed
+        win_chocolatey:
+         name: filezilla
+         version: '3.51.0'
+         state: present
+
+
+  #Installation of Google Earth Pro
+  #Google earth enterprise client v7.3.3.7786 not avaliable but google earth pro is 
+      - name: Ensure google earth pro v7.3.3.7786 installed
+        win_chocolatey:
+          name: googleearthpro
+          state: present
+          version: '7.3.3.7786'
+          ignore_checksums: yes #Had to add this in order to complete with version successfully
+
+
+  #Installation of Java 8 update 231
+      - name: Ensure Java runtime (jre) v8.0.231 installed
+        win_chocolatey:
+          name: javaruntime
+          state: present
+          version: '8.0.231'
+
+
+      - name: Ensure mirc v7.52 installed
+        win_chocolatey:
+            name: mirc
+            state: present
+            version: '7.52'
+            ignore_checksums: yes #Had to add this in order to complete with version successfully
+
+
+  #Installation Notepad++ 
+      - name: Ensure notepadplusplus 7.9 installed
+        win_chocolatey:
+          name: notepadplusplus
+          state: present
+          version: '7.9'
+          ignore_checksums: yes #Had to add this in order to complete with version successfully
+
+
+  #Installation of SnagIt
+  #version 18.2.2.2240 was not avalible so the next version 2019.1.0 was downloaded
+      - name: Ensure snagit v2021.0.2 installed
+        win_chocolatey:
+          name: snagit
+          state: present
+          version: '2021.0.2' #Need to add quotes around version or playbook will fail
+
+      
+  #Installation of VLC media Player
+      - name: Ensure vlc 3.0.11 installed
+        win_chocolatey:
+          name: vlc
+          state: present
+          version: '3.0.11' 
+
+  #Installation of WinRar
+      - name: Ensure winrar 5.71 installed
+        win_chocolatey:
+          name: winrar
+          state: present
+          version: '5.71'     
