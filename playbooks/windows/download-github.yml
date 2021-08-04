@@ -1,0 +1,10 @@
+---
+- hosts: workstations
+  tasks:
+
+  #Installation of ArcGis Earth
+  #Installed the most recent version of ArcGis Earth
+    - name: Install google earth from github repository
+      win_package:
+        path: https://github.com/fped4l/iac-ansible/blob/main/applications/googleearthecwin-x64.exe
+        state: present
