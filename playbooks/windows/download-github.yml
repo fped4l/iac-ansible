@@ -8,4 +8,4 @@
       win_package:
         path: https://github.com/fped4l/iac-ansible/raw/main/applications/googleearthecwin-x64.exe
         state: present
-        product_id: '{EFB84DAE-9CA6-45F1-A8AC-5CE8EFD25CC9}'
+        product_id: auto
