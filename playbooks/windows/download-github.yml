@@ -6,6 +6,6 @@
   #Learning how to install applications we store on the repository
     - name: Install google earth from github repository
       win_package:
-        path: https://github.com/fped4l/iac-ansible/blob/main/applications/googleearthecwin-x64.exe
+        path: https://github.com/fped4l/iac-ansible/raw/main/applications/googleearthecwin-x64.exe
         state: present
         product_id: '{EFB84DAE-9CA6-45F1-A8AC-5CE8EFD25CC9}'
