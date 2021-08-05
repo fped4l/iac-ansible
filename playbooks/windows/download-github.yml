@@ -5,7 +5,7 @@
   #Installation of google earth through the github repository
   #Learning how to install applications we store on the repository
     - name: Install google earth from github repository
-      win_package:
+      win_get_url:
         path: https://github.com/fped4l/iac-ansible/raw/main/applications/googleearthecwin-x64.exe
         state: present
         product_id: auto
