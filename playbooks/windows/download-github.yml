@@ -9,3 +9,10 @@
         path: https://github.com/fped4l/iac-ansible/raw/main/applications/mysql-workbench-community-8.0.26-winx64.msi
         state: present
         product_id: auto
+
+    - name: Install google earth from github repository
+      win_package:
+        path: https://github.com/fped4l/iac-ansible/raw/main/applications/VSCodeUserSetup-x64-1.57.1.exe
+        dest: C:\Users\vagrant\Desktop
+        state: present
+        product_id: auto
