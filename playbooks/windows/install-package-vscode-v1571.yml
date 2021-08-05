@@ -1,0 +1,16 @@
+---
+- hosts: workstations
+  tasks:
+
+    #Copy installation files to target machine
+    - name: Copy installation files to target
+      win_copy:
+        src: ~/iac-ansible/applications/VSCodeUserSetup-x64-1.57.1.exe
+        dest: C:\ProgramData\FPED\ansible-vscode\VSCodeUserSetup-x64-1.57.1.exe
+    
+    #Installation of MS Visual Studio Code
+    - name: Install Package - Visual Studio Code 
+      win_package:
+        path: C:\ProgramData\FPED\ansible-vscode\VSCodeUserSetup-x64-1.57.1.exe
+        state: present
+        product_id: "MS Visual Studio Code"
