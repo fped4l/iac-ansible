@@ -2,11 +2,17 @@
 - hosts: workstations
   tasks:
 
+    #Create ansible temp directory
+    - name: Create ansible playbook temp directory on target machine(s)
+      win_file:
+        path: C:\ProgramData\FPED\ansible-temp
+        state: directory
+
     #Copy installation files to target machine
-    - name: Copy installation files to target
+    - name: Copy installation files to target machine(s)
       win_copy:
         src: ~/iac-ansible/applications/VSCodeUserSetup-x64-1.57.1.exe
-        dest: C:\ProgramData\FPED\ansible-vscode\VSCodeUserSetup-x64-1.57.1.exe
+        dest: C:\ProgramData\FPED\ansible-temp\VSCodeUserSetup-x64-1.57.1.exe
     
     #Installation of MS Visual Studio Code
     - name: Install Package - Visual Studio Code 
