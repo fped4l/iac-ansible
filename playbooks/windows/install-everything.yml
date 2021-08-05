@@ -78,4 +78,4 @@
         win_chocolatey:
             name: python
             state: present
-            version: 3.9.6
+            version: '3.9.6'
