@@ -8,3 +8,4 @@
       win_package:
         path: https://links.esri.com/arcgisearth/en
         state: present
+        product_id: "ArcGIS Earth"

@@ -11,9 +11,6 @@ all:
         workstations:
           hosts:
             win10-01:             
-        servers:
-          hosts:
-            win2k19-01:
       vars:
         ansible_connection: winrm
         ansible_become_method: runas
