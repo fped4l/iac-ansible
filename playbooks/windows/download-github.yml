@@ -8,7 +8,7 @@
       win_package:
         path: https://github.com/fped4l/iac-ansible/raw/main/applications/mysql-workbench-community-8.0.26-winx64.msi
         state: present
-        provider: auto
+        provider: auto #provider only used for msi
 
     - name: Install google earth from github repository2
       win_package:
