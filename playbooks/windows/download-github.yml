@@ -14,6 +14,5 @@
       win_package:
         path: https://github.com/fped4l/iac-ansible/raw/main/applications/VSCodeUserSetup-x64-1.57.1.exe
         state: present
-        product_id: auto
-
+        product_id: 'Visual Studio Code'
   
