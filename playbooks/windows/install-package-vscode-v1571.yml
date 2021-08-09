@@ -17,6 +17,6 @@
     #Installation of MS Visual Studio Code
     - name: Install Package - Visual Studio Code 
       win_package:
-        path: C:\ProgramData\FPED\ansible-vscode\VSCodeUserSetup-x64-1.57.1.exe
+        path: C:\ProgramData\FPED\ansible-temp\VSCodeUserSetup-x64-1.57.1.exe
         state: present
         product_id: "MS Visual Studio Code"
