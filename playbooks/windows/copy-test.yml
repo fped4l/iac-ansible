@@ -4,15 +4,9 @@
 
   - name: Copy arcgis earth
     win_copy:
-      src: C:/Users/raysh/Downloads/ArcGIS_Earth_x64_Setup_1_12.exe
-      dest: C:/Users/vagrant/Downloads/
+      src: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\ArcGIS\Earth
+      dest: C:\Program Files
     become: yes
     become_user: root
 
-  - name: Copy eclipse to win10-01
-    win_copy:
-      src: C:/Users/raysh/Downloads/eclipse-inst-jre-win64.exe
-      dest: C:/Users/vagrant/Downloads/
-    become: yes
-    become_user: root
   
