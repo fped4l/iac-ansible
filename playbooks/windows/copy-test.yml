@@ -4,7 +4,7 @@
 
   - name: Copy arcgis earth
     win_copy:
-      src: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\ArcGIS\Earth
+      src: C:\Program Files\ArcGIS\Earth
       dest: C:\Program Files
     become: yes
     become_user: root
