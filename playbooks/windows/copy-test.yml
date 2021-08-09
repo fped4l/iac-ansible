@@ -1,0 +1,14 @@
+---
+- hosts: workstations
+  tasks:
+
+  - name: Copy a single file keeping the filename
+    win_copy:
+      src: / C:\Users\raysh\Downloads/ArcGIS_Earth_x64_Setup_1_12.exe
+      dest: C:\Users\vagrant\Downloads\
+
+  - name: Copy a single file keeping the filename
+    win_copy:
+      src: / C:\Users\raysh\Downloads/eclipse-inst-jre-win64.exe
+      dest: C:\Users\vagrant\Downloads\
+  
