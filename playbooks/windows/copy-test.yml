@@ -5,13 +5,20 @@
   #Create ansible temp directory
   - name: Create ansible playbook temp directory on target machine(s)
     win_file:
-        path: C:\ProgramData\FPED\ArcGis-temp
+        path: C:\ProgramData\FPED\Discord-temp
         state: directory
 
   #Copy installation files to target machine
   - name: Copy installation files to target machine(s)
     win_copy:
-        src: C:\Users\raysh\Downloads\ArcGIS_Earth_x64_Setup_1_12.exe
-        dest: C:\ProgramData\FPED\ArcGis-temp\ArcGIS_Earth_x64_Setup_1_12.exe
+        src: ~/iac-ansible/applications/DiscordSetup.exe
+        dest: C:\ProgramData\FPED\Discord-temp\DiscordSetup.exe
+
+  #Installation of MS Visual Studio Code
+  #- name: Install Package - Discord
+      #win_package:
+        #path: C:\ProgramData\FPED\ArcGis-temp\DiscordSetup.exe
+        #state: present
+        #product_id: '{3B89F0F7-0B4D-4C41-A438-74EEBBD43CA1}'
 
   
