@@ -2,24 +2,24 @@
 - hosts: workstations
   tasks:
 
-  #Create ansible temp directory
-  - name: Create ansible playbook temp directory on target machine(s)
-    win_file:
-        path: C:\ProgramData\FPED\Discord-temp
-        state: directory
+  # #Create ansible temp directory
+  # - name: Create ansible playbook temp directory on target machine(s)
+  #   win_file:
+  #       path: C:\ProgramData\FPED\Discord-temp
+  #       state: directory
 
-  #Copy installation files to target machine
-  - name: Copy installation files to target machine(s)
-    win_copy:
-        src: ~/iac-ansible/applications/DiscordSetup.exe
-        dest: C:\ProgramData\FPED\Discord-temp\DiscordSetup.exe
+  # #Copy installation files to target machine
+  # - name: Copy installation files to target machine(s)
+  #   win_copy:
+  #       src: ~/iac-ansible/applications/DiscordSetup.exe
+  #       dest: C:\ProgramData\FPED\Discord-temp\DiscordSetup.exe
 
-  #Installation of Discord
-  - name: Install Package - Discord
-    win_package:
-        path: C:\ProgramData\FPED\Discord-temp\DiscordSetup.exe
-        state: present
-        product_id: auto
+  # #Installation of Discord
+  # - name: Install Package - Discord
+  #   win_package:
+  #       path: C:\ProgramData\FPED\Discord-temp\DiscordSetup.exe
+  #       state: present
+  #       product_id: auto
 #-----------------------------------------------------------------------
 
 #Create ansible temp directory
