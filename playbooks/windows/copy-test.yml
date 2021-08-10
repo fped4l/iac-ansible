@@ -19,7 +19,7 @@
     win_package:
         path: C:\ProgramData\FPED\Discord-temp\DiscordSetup.exe
         state: present
-        product_id:
+        product_id: auto
 #-----------------------------------------------------------------------
 
 #Create ansible temp directory
