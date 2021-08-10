@@ -2,11 +2,16 @@
 - hosts: workstations
   tasks:
 
-  - name: Copy arcgis earth
+  #Create ansible temp directory
+  - name: Create ansible playbook temp directory on target machine(s)
+    win_file:
+        path: C:\ProgramData\FPED\ArcGis-temp
+        state: directory
+
+  #Copy installation files to target machine
+  - name: Copy installation files to target machine(s)
     win_copy:
-      src: C:\Program Files\ArcGIS\Earth
-      dest: C:\Program Files
-    become: yes
-    become_user: root
+        src: C:\Users\raysh\Downloads\ArcGIS_Earth_x64_Setup_1_12.exe
+        dest: C:\ProgramData\FPED\ArcGis-temp\ArcGIS_Earth_x64_Setup_1_12.exe
 
   
