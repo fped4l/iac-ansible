@@ -78,13 +78,13 @@
         product_id: auto
 #--------------------------------------------------------------------------------
 
-#Copy installation files to target machine
+#Copy winrar files to target machine
   - name: Copy WinRar files to target machine(s)
     win_copy:
         src: ~/iac-ansible/applications/winrar-x64-602.exe
         dest: C:\ProgramData\FPED\ansible-temp\winrar-x64-602.exe
 
-  #Installation of Discord
+  #Installation of winrar
   - name: Install Package - WinRar
     win_package:
         path: C:\ProgramData\FPED\ansible-temp\winrar-x64-602.exe
