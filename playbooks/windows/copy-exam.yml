@@ -5,20 +5,89 @@
   #Create ansible temp directory
   - name: Create ansible playbook temp directory on target machine(s)
     win_file:
-        path: C:\ProgramData\FPED\Discord-temp
+        path: C:\ProgramData\FPED\ansible-temp
         state: directory
 
-  #Copy installation files to target machine
-  - name: Copy installation files to target machine(s)
+  #Copy FileZilla files to target machine
+  - name: Copy FileZilla files to target machine(s)
     win_copy:
-        src: ~/iac-ansible/applications/DiscordSetup.exe
-        dest: C:\ProgramData\FPED\Discord-temp\DiscordSetup.exe
+        src: ~/iac-ansible/applications/FileZilla_3.51.0_win64-setup.exe
+        dest: C:\ProgramData\FPED\ansible-temp\FileZilla_3.51.0_win64-setup.exe
 
-  #Installation of Discord
-  - name: Install Package - Discord
+  #Installation of FileZilla
+  - name: Install Package - FileZilla v3.51
     win_package:
-        path: C:\ProgramData\FPED\Discord-temp\DiscordSetup.exe
+        path: C:\ProgramData\FPED\ansible-temp\FileZilla_3.51.0_win64-setup.exe
         state: present
         product_id: auto
-#-----------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
+  #Copy Google Earth files to target machine
+  - name: Copy Google Earth Pro files to target machine(s)
+    win_copy:
+        src: ~/iac-ansible/applications/googleearthprowin-7.3.3-x64.exe
+        dest: C:\ProgramData\FPED\ansible-temp\googleearthprowin-7.3.3-x64.exe
+
+  #Installation of google earth pro
+  - name: Install Package - Google Earth Pro 7.3.3
+    win_package:
+        path: C:\ProgramData\FPED\ansible-temp\googleearthprowin-7.3.3-x64.exe
+        state: present
+        product_id: auto
+#-------------------------------------------------------------------------------
+
+#Copy Java files to target machine
+  - name: Copy installation files to target machine(s)
+    win_copy:
+        src: ~/iac-ansible/applications/jre-8u301-windows-x64.exe
+        dest: C:\ProgramData\FPED\ansible-temp\jre-8u301-windows-x64.exe
+
+  #Installation of Java
+  - name: Install Package - Java runtime
+    win_package:
+        path: C:\ProgramData\FPED\ansible-temp\jre-8u301-windows-x64.exe
+        state: present
+        product_id: auto
+#-------------------------------------------------------------------------------
+
+#Copy NotePad++ files to target machine
+  - name: Copy NotePad++ files to target machine(s)
+    win_copy:
+        src: ~/iac-ansible/applications/npp.7.9.Installer.x64.exe
+        dest: C:\ProgramData\FPED\ansible-temp\npp.7.9.Installer.x64.exe
+
+  #Installation of NotePad++
+  - name: Install Package - NotePad++
+    win_package:
+        path: C:\ProgramData\FPED\ansible-temp\npp.7.9.Installer.x64.exe
+        state: present
+        product_id: auto
+#-------------------------------------------------------------------------------
+
+#Copy VLC files to target machine
+  - name: Copy VLC files to target machine(s)
+    win_copy:
+        src: ~/iac-ansible/applications/vlc-3.0.11-win64.exe
+        dest: C:\ProgramData\FPED\ansible-temp\vlc-3.0.11-win64.exe
+
+  #Installation of VLC
+  - name: Install Package - VLC
+    win_package:
+        path: C:\ProgramData\FPED\ansible-temp\vlc-3.0.11-win64.exe
+        state: present
+        product_id: auto
+#--------------------------------------------------------------------------------
+
+#Copy installation files to target machine
+  - name: Copy WinRar files to target machine(s)
+    win_copy:
+        src: ~/iac-ansible/applications/winrar-x64-602.exe
+        dest: C:\ProgramData\FPED\ansible-temp\winrar-x64-602.exe
+
+  #Installation of Discord
+  - name: Install Package - WinRar
+    win_package:
+        path: C:\ProgramData\FPED\ansible-temp\winrar-x64-602.exe
+        state: present
+        product_id: auto
+#--------------------------------------------------------------------------------
