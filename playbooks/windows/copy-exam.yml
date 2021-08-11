@@ -51,6 +51,7 @@
         path: C:\ProgramData\FPED\ansible-temp\FileZilla_3.51.0_win64-setup.exe
         state: present
         product_id: auto
+        arguments: /S
 
   #Installation of google earth pro
   - name: Install Package - Google Earth Pro 7.3.3
