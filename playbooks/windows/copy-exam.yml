@@ -78,7 +78,7 @@
         state: present
         product_id: auto
         arguments: 
-        - /S 
+        - /s 
         - /norestart
         #expected_return_code: ['4294967216']
         become: yes
