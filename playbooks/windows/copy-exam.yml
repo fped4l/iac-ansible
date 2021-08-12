@@ -59,16 +59,17 @@
         become_user: Administrator
 
   #Installation of google earth pro
-  #- name: Install Package - Google Earth Pro 7.3.3
-    #win_package:
-        #path: C:\ProgramData\FPED\ansible-temp\googleearthprowin-7.3.3-x64.exe
-        #state: present
-        #product_id: auto
-        # arguments: 
-        # - /S
-        # - /norestart
-        # become: yes
-        # become_user: Administrator
+  - name: Install Package - Google Earth Pro 7.3.3
+    win_package:
+        path: C:\ProgramData\FPED\ansible-temp\googleearthprowin-7.3.3-x64.exe
+        state: present
+        product_id: auto
+        arguments: 
+        - /S
+        - /norestart
+        expected_return_code: [0, 1639]
+        become: yes
+        become_user: Administrator
 
   #Installation of Java
   - name: Install Package - Java runtime
@@ -79,6 +80,7 @@
         arguments: 
         - /s 
         - /norestart
+        expected_return_code: [0, 4294967216]
         become: yes
         become_user: Administrator
 
