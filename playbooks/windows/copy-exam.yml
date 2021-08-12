@@ -80,7 +80,6 @@
         arguments: 
         - /s 
         - /norestart
-        expected_return_code: [0, 1639]
         #expected_return_code: ['4294967216']
         become: yes
         become_user: Administrator
