@@ -62,7 +62,7 @@
         path: C:\ProgramData\FPED\ansible-temp\googleearthprowin-7.3.3-x64.exe
         state: present
         product_id: auto
-        arguments: /S
+        arguments: /qn
         become: yes
         become_user: Administrator
 
