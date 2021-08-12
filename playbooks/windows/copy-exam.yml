@@ -83,6 +83,7 @@
         #expected_return_code: ['4294967216']
         become: yes
         become_user: Administrator
+        expected_return_code: [0, 1639]
 
   #Installation of NotePad++
   - name: Install Package - NotePad++
