@@ -1,8 +1,6 @@
 ---
 - hosts: workstations
-  become_method: sudo
-  become: yes
-  become_user: root
+  become_method: runas
   tasks:
 
   #Create ansible temp directory
@@ -55,6 +53,8 @@
         state: present
         product_id: auto
         arguments: /S
+        become: yes
+        become_user: Administrator
 
   #Installation of google earth pro
   - name: Install Package - Google Earth Pro 7.3.3
@@ -63,6 +63,8 @@
         state: present
         product_id: auto
         arguments: /S
+        become: yes
+        become_user: Administrator
 
   #Installation of Java
   - name: Install Package - Java runtime
@@ -71,6 +73,8 @@
         state: present
         product_id: auto
         arguments: /s
+        become: yes
+        become_user: Administrator
 
   #Installation of NotePad++
   - name: Install Package - NotePad++
@@ -79,6 +83,8 @@
         state: present
         product_id: auto
         arguments: /S
+        become: yes
+        become_user: Administrator
 
   #Installation of VLC
   - name: Install Package - VLC
@@ -87,6 +93,8 @@
         state: present
         product_id: auto
         arguments: /S
+        become: yes
+        become_user: Administrator
 
   #Installation of winrar
   - name: Install Package - WinRar
@@ -95,3 +103,5 @@
         state: present
         product_id: auto
         arguments: /S
+        become: yes
+        become_user: Administrator
