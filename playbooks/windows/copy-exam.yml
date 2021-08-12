@@ -1,6 +1,6 @@
 ---
 - hosts: workstations
-  become_method: runas
+  become_method: sudo
   become: yes
   #become_user: root
   tasks:
