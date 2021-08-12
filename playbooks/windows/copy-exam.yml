@@ -1,5 +1,8 @@
 ---
 - hosts: workstations
+  become_method: runas
+  become: yes
+  become_user: Administrator
   tasks:
 
   #Create ansible temp directory
@@ -59,6 +62,7 @@
         path: C:\ProgramData\FPED\ansible-temp\googleearthprowin-7.3.3-x64.exe
         state: present
         product_id: auto
+        arguments: /S
 
   #Installation of Java
   - name: Install Package - Java runtime
@@ -66,6 +70,7 @@
         path: C:\ProgramData\FPED\ansible-temp\jre-8u301-windows-x64.exe
         state: present
         product_id: auto
+        arguments: /s
 
   #Installation of NotePad++
   - name: Install Package - NotePad++
@@ -73,6 +78,7 @@
         path: C:\ProgramData\FPED\ansible-temp\npp.7.9.Installer.x64.exe
         state: present
         product_id: auto
+        arguments: /S
 
   #Installation of VLC
   - name: Install Package - VLC
@@ -80,6 +86,7 @@
         path: C:\ProgramData\FPED\ansible-temp\vlc-3.0.11-win64.exe
         state: present
         product_id: auto
+        arguments: /S
 
   #Installation of winrar
   - name: Install Package - WinRar
@@ -87,3 +94,4 @@
         path: C:\ProgramData\FPED\ansible-temp\winrar-x64-602.exe
         state: present
         product_id: auto
+        arguments: /S
