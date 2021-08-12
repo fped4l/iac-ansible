@@ -52,7 +52,9 @@
         path: C:\ProgramData\FPED\ansible-temp\FileZilla_3.51.0_win64-setup.exe
         state: present
         product_id: auto
-        arguments: /S /norestart
+        arguments: 
+        - /S 
+        - /norestart
         become: yes
         become_user: Administrator
 
@@ -62,7 +64,9 @@
         path: C:\ProgramData\FPED\ansible-temp\googleearthprowin-7.3.3-x64.exe
         state: present
         product_id: auto
-        arguments: /qn /norestart
+        arguments: 
+        - /qn 
+        - /norestart
         become: yes
         become_user: Administrator
 
@@ -72,7 +76,9 @@
         path: C:\ProgramData\FPED\ansible-temp\jre-8u301-windows-x64.exe
         state: present
         product_id: auto
-        arguments: /s /norestart
+        arguments: 
+        - /s 
+        - /norestart
         become: yes
         become_user: Administrator
 
@@ -82,7 +88,9 @@
         path: C:\ProgramData\FPED\ansible-temp\npp.7.9.Installer.x64.exe
         state: present
         product_id: auto
-        arguments: /S /norestart
+        arguments: 
+        - /S 
+        - /norestart
         become: yes
         become_user: Administrator
 
@@ -92,7 +100,9 @@
         path: C:\ProgramData\FPED\ansible-temp\vlc-3.0.11-win64.exe
         state: present
         product_id: auto
-        arguments: /S /norestart
+        arguments: 
+        - /S 
+        - /norestart
         become: yes
         become_user: Administrator
 
@@ -102,6 +112,8 @@
         path: C:\ProgramData\FPED\ansible-temp\winrar-x64-602.exe
         state: present
         product_id: auto
-        arguments: /S /norestart
+        arguments: 
+        - /S 
+        - /norestart
         become: yes
         become_user: Administrator
