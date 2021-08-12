@@ -2,7 +2,7 @@
 - hosts: workstations
   become_method: sudo
   become: yes
-  #become_user: root
+  become_user: root
   tasks:
 
   #Create ansible temp directory
