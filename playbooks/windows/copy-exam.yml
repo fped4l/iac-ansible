@@ -78,9 +78,9 @@
         state: present
         product_id: auto
         arguments: 
-        - /qn 
+        - /s 
         - /norestart
-        #expected_return_code: ['4294967216']
+        expected_return_code: [0, 666, 3010]
         become: yes
         become_user: Administrator
         
