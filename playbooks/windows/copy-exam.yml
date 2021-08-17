@@ -22,7 +22,7 @@
         dest: C:\ProgramData\FPED\ansible-temp\googleearthprowin-7.3.3-x64.exe
 
 #Copy Java files to target machine
-  - name: Copy installation files to target machine(s)
+  - name: Copy Java (JRE) files to target machine(s)
     win_copy:
         src: ~/iac-ansible/applications/jre-8u301-windows-x64.exe
         dest: C:\ProgramData\FPED\ansible-temp\jre-8u301-windows-x64.exe
@@ -78,7 +78,7 @@
         become_user: Administrator
 
   #Installation of Java
-  - name: install jre with a script
+  - name: Install Package - Java Runtime
     win_shell: C:\ProgramData\FPED\ansible-temp\install-jre.ps1\install-jre.ps1
   # - name: Install Package - Java runtime
   #   win_package:
