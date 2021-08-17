@@ -1,0 +1,1 @@
+Start-Process -Wait -FilePath C:\ProgramData\FPED\ansible-temp\jre-8u301-windows-x64.exe -ArgumentList '/s' -PassThru
