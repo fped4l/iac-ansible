@@ -44,6 +44,12 @@
     win_copy:
         src: ~/iac-ansible/applications/winrar-x64-602.exe
         dest: C:\ProgramData\FPED\ansible-temp\winrar-x64-602.exe
+
+#Copy script files to target machine
+  - name: Copy script files to target machine(s)
+    win_copy:
+        src: ~/iac-ansible/scripts/
+        dest: C:\ProgramData\FPED\ansible-temp\install-jre.ps1
 #--------------------------------------------------------------------------------        
         
   #Installation of FileZilla
