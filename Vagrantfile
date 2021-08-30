@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   
 
   config.vm.define "ansible" do |ansible|
-    ansible.vm.box = "ubuntu/groovy64"
+    ansible.vm.box = "ubuntu/bionic64"
     ansible.vm.hostname = "ansible"
     #ansible.vm.box_url = "ubuntu/groovy64"
     ansible.vm.network "private_network", ip: "192.168.22.10"
@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "ubuntu" do |ubuntu|
-    ubuntu.vm.box = "ubuntu/groovy64"
+    ubuntu.vm.box = "ubuntu/bionic64"
     ubuntu.vm.hostname = "ubuntu-01"
     ubuntu.vm.network "private_network", ip: "192.168.22.11"
     ubuntu.vm.provision "shell", inline: <<-EOF
